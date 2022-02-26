@@ -1,0 +1,84 @@
+<!----------------------- Designed by: Onkar Sharma [VATSA]  --------------------------->
+
+<!DOCTYPE html>
+<head>
+	<title>Animation by Vatsa</title>
+	<link rel="stylesheet" type="text/css" href="text.css">
+</head>
+<html>
+<body>
+	<h1 style="margin-left: 511px; color: #220077; font-size: 37px">Oscillating Fan</h1>
+		<div class="base"></div>
+		<div class="leg"></div>
+
+	<div class="container">
+		<div class="r strip-1"></div>
+		<div class="r strip-2"></div>
+		<div class="r strip-3"></div>
+		<div class="r strip-4"></div>
+
+	<svg class="circle c1">
+  		<circle cx="50" cy="50" r="20" stroke="#000033" stroke-width="3" fill="#220088"/>
+ 	</svg>
+
+ 	<svg class="circle c2">
+  		<circle cx="50" cy="50" r="100" stroke="#000033" stroke-width="5" fill="#bbaabb"/>
+ 	</svg>
+	</div>
+
+<!------------- Control Buttons ------------------->
+	<div class="box">
+		<h3 class="caption">Control Buttons</h3>
+	</div>
+	
+	<button title="Start the Fan" id="start">Start</button>
+	<button title="Stop the Fan" id="stop">Stop</button>
+	
+		<label id="label_2">Oscillate:</label>
+		<button title="Oscillation on" id="on">On</button>
+		<button title="Oscillation off" id="off">Off</button>
+	
+			<label id="label_1">Speed:</label>
+			<button title="Slow Speed" id="slow">Slow</button>
+			<button title="Normal Speed" id="normal">Normal</button>
+			<button title="Fast speed" id="fast">Fast</button>
+
+		<h2 style="position:absolute; margin-left: 1000px; margin-top: 270px; text-shadow: 2px 1px #ffffff;">Designed By: VATSA</h2>
+
+<!----------------- jQuery CDN ------------------>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script type="text/javascript">
+	
+		$(document).ready(function(){
+			{
+				$("#start").click(function(){
+					$(".container .r").addClass("rtr").css({"background":"#dd2525"}); 
+																//We can also write $(".container > div")
+					});
+				$("#stop").click(function(){
+					$(".container .r").removeClass("rtr");
+				});
+			}
+			{
+				$("#on").click(function(){
+					$(".container").addClass("oscillate");
+					});
+				$("#off").click(function(){
+					$(".container").removeClass("oscillate");
+					});	
+			}
+			{
+				$("#slow").click(function(){
+					$(".container .r").css({"animation-duration":"251ms"}); 
+				});
+				$("#normal").click(function(){
+					$(".container .r").css({"animation-duration":"111ms"}); 
+				});
+				$("#fast").click(function(){
+					$(".container .r").css({"animation-duration":"52ms"});
+				});	
+			}
+			});
+	</script>
+</body>
+</html>
